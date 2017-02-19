@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sun Feb 19 14:04:19 2017
+Fitter Status : Successful - Sun Feb 19 15:19:13 2017
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : 7seg_pwm
 Top-level Entity Name : 7seg_pwm
 Family : MAX 10
 Device : 10M08DAF256C8GES
 Timing Models : Preliminary
-Total logic elements : 18 / 8,064 ( < 1 % )
-    Total combinational functions : 18 / 8,064 ( < 1 % )
-    Dedicated logic registers : 15 / 8,064 ( < 1 % )
-Total registers : 15
+Total logic elements : 24 / 8,064 ( < 1 % )
+    Total combinational functions : 24 / 8,064 ( < 1 % )
+    Dedicated logic registers : 17 / 8,064 ( < 1 % )
+Total registers : 17
 Total pins : 7 / 178 ( 4 % )
 Total virtual pins : 0
 Total memory bits : 0 / 387,072 ( 0 % )

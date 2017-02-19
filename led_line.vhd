@@ -16,19 +16,37 @@ ARCHITECTURE synthesis1 OF led_line IS
 	SIGNAL count_frame : unsigned(4 DOWNTO 0); --32 frames per second
 	
 	SIGNAL f: std_logic;
+	SIGNAL f_count : unsigned(3 DOWNTO 0);
 BEGIN
-	PROCESS (clk)
+	f <= count(10) WHEN (buttons = "00") ELSE
+	     count(11) WHEN (buttons = "01") ELSE
+		  count(12) WHEN (buttons = "10") ELSE
+		  count(13);
+
+   PROCESS (clk)
 	BEGIN
 		IF (clk'EVENT) AND (clk = '1') THEN
 			count <= count + 1;
 		END IF;
 	END PROCESS;
 
-	f <= count(11) WHEN (buttons = "00") ELSE
-	     count(12) WHEN (buttons = "01") ELSE
-		  count(13) WHEN (buttons = "10") ELSE
-		  count(14);
-   leds(3 downto 2) <= "10" WHEN (f = '1') ELSE
-                       "01";
-	leds(1 downto 0) <= "11";
+	PROCESS (f)
+	BEGIN
+		IF (f'EVENT AND f = '1') THEN
+			IF (f_count < 5) THEN
+				f_count <= f_count + 1;
+			ELSE
+				f_count <= (others => '0');
+			END IF;
+		END IF; --(f'EVENT AND f = '1')
+	END PROCESS;
+
+	WITH f_count SELECT
+		leds <= "1110" WHEN X"0",
+				  "1101" WHEN X"1",
+				  "1011" WHEN X"2",
+				  "0111" WHEN X"3",
+				  "1011" WHEN X"4",
+				  "1101" WHEN X"5",
+				  "1111" WHEN OTHERS;
 END synthesis1;
