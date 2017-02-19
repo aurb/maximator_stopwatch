@@ -42,16 +42,16 @@ clk => count[29].CLK
 clk => count[30].CLK
 clk => count[31].CLK
 clk => count[32].CLK
-buttons[0] => Equal0.IN0
-buttons[0] => Equal1.IN1
+buttons[0] => Equal0.IN1
+buttons[0] => Equal1.IN0
 buttons[0] => Equal2.IN1
-buttons[1] => Equal0.IN1
-buttons[1] => Equal1.IN0
+buttons[1] => Equal0.IN0
+buttons[1] => Equal1.IN1
 buttons[1] => Equal2.IN0
-leds[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-leds[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-leds[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-leds[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+leds[0] <= leds.DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= leds.DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= leds.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= leds.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |7seg_pwm|pwm_clk:inst

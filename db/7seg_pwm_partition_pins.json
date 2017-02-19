@@ -20,11 +20,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "BUT2",
+					"name" : "BUT1",
 					"strict" : false
 				},
 				{
-					"name" : "BUT1",
+					"name" : "BUT2",
 					"strict" : false
 				}
 			]
