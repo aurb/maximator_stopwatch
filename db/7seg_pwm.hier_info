@@ -1,18 +1,14 @@
 |7seg_pwm
-LED1 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-BUT1 => inst4.IN0
-BUT1 => in6.IN0
-BUT2 => inst4.IN1
-BUT2 => in6.IN1
-LED2 <= in6.DB_MAX_OUTPUT_PORT_TYPE
-LED3 <= leds[0].DB_MAX_OUTPUT_PORT_TYPE
+LED1 <= leds[0].DB_MAX_OUTPUT_PORT_TYPE
 inclk => pwm_clk:inst.inclk0
-LED4 <= leds[1].DB_MAX_OUTPUT_PORT_TYPE
+BUT1 => led_line:inst1.buttons[0]
+BUT2 => led_line:inst1.buttons[1]
+LED2 <= leds[1].DB_MAX_OUTPUT_PORT_TYPE
+LED3 <= leds[2].DB_MAX_OUTPUT_PORT_TYPE
+LED4 <= leds[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |7seg_pwm|led_line:inst1
-clk => leds[0]~reg0.CLK
-clk => leds[1]~reg0.CLK
 clk => count[0].CLK
 clk => count[1].CLK
 clk => count[2].CLK
@@ -29,8 +25,33 @@ clk => count[12].CLK
 clk => count[13].CLK
 clk => count[14].CLK
 clk => count[15].CLK
-leds[0] <= leds[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-leds[1] <= leds[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+clk => count[26].CLK
+clk => count[27].CLK
+clk => count[28].CLK
+clk => count[29].CLK
+clk => count[30].CLK
+clk => count[31].CLK
+clk => count[32].CLK
+buttons[0] => Equal0.IN0
+buttons[0] => Equal1.IN1
+buttons[0] => Equal2.IN1
+buttons[1] => Equal0.IN1
+buttons[1] => Equal1.IN0
+buttons[1] => Equal2.IN0
+leds[0] <= <VCC>
+leds[1] <= <VCC>
+leds[2] <= f.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= f.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |7seg_pwm|pwm_clk:inst
